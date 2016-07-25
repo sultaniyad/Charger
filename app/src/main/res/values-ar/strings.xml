@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">اشحن رصيدك</string>
+
+
+    <string name="welcome">اهلا وسهلا</string>
+    <string name="to">الى</string>
+    <string name="charger">اشحن رصيدك بدقائق</string>
+
+
+    <string name="start">أبدا</string>
+    <string name="next">التالي</string>
+
+    <string name="select_your_provider">اختر مزود الخدمة</string>
+
+    <string name="stc">الأتصالات السعودية</string>
+    <string name="mobily">موبايلي</string>
+    <string name="zain">زين</string>
+
+
+    <string name="NID">رقم بطاقة الأحوال</string>
+    <string name="finish">نهاية</string>
+
+    <string name="no_Item_selected">اختر مزود الخدمة !</string>
+
+    <string name="charge">شحن</string>
+    <string name="balance">رصيدي</string>
+    <string name="redirect">تحويل رصيد</string>
+
+    <string name="charge_card">اشحن</string>
+
+    <string name="reset">اعادة التعين</string>
+    <string name="about">حول</string>
+
+    <string name="requestPhonePermission">لابد من السماح للتطبيق با الوصول للهاتف حتى يعمل</string>
+
+    <string name="card_number_hint">رقم بطاقة الشحن</string>
+
+    <bool name="is_right_to_left">true</bool>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item >
+       <shape android:shape="rectangle"  >
+           <corners android:radius="5dp"></corners>
+         <solid android:color="@color/button_text2"></solid>
+           <size android:width="30dp" android:height="50dp"></size>
+
+
+       </shape>
+
+    </item>
+
+    <item android:state_hovered="true" >
+        <shape android:shape="rectangle" >
+
+            <corners android:radius="125dp"></corners>
+            <solid android:color="@color/button_text"></solid>
+            <size android:width="30dp" android:height="50dp"></size>
+
+
+        </shape>
+
+    </item>
+
+</selector>

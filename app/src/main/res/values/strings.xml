@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Charger</string>
+
+
+    <string name="welcome">Welcome</string>
+    <string name="to">To</string>
+    <string name="charger">Charger</string>
+
+
+    <string name="start">Start</string>
+    <string name="next">Next</string>
+
+    <string name="select_your_provider">Select your provider</string>
+
+    <string name="stc">STC</string>
+    <string name="mobily">Mobily</string>
+    <string name="zain">Zain</string>
+
+
+    <string name="NID">Your ID</string>
+    <string name="finish">Finish</string>
+
+
+
+    <string name="no_Item_selected">No Item Selected</string>
+
+    <string name="charge">charge</string>
+    <string name="balance">balance</string>
+    <string name="redirect">redirect</string>
+
+    <string name="charge_card">charge</string>
+
+    <string name="reset">Reset</string>
+    <string name="about">About</string>
+
+    <string name="requestPhonePermission">لابد من السماح للتطبيق با الوصول للهاتف حتى يعمل</string>
+
+    <string name="card_number_hint">Enter card Number</string>
+
+
+    <bool name="is_right_to_left">false</bool>
+
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+
+        android:gravity="center|start"
+        android:orientation="horizontal"
+        android:paddingLeft="3dp"
+        android:layout_weight="2">
+
+
+        <TextView
+            android:id="@+id/selectProviderText"
+            style="@style/button_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_your_provider"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RadioGroup
+
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:id="@+id/providerRadioGroup">
+
+            <RadioButton
+                android:id="@+id/stcRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:drawableEnd="@mipmap/stc_logo"
+                android:drawableRight="@mipmap/stc_logo"
+                android:drawablePadding="18dp"
+                android:text="@string/stc"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/mobilyRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:drawableEnd="@mipmap/mobily_logo"
+                android:drawableRight="@mipmap/mobily_logo"
+                android:drawablePadding="3dp"
+                android:text="@string/mobily"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/zainRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:drawableEnd="@mipmap/zain_logo"
+                android:drawableRight="@mipmap/zain_logo"
+                android:drawablePadding="18dp"
+                android:text="@string/zain"
+                android:layout_weight="1" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnStart_2"
+            style="@style/button_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_animation"
+            android:text="@string/start" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
