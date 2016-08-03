@@ -6,8 +6,9 @@ package="com.iyad.sultan.charger">
            but within the "manifest" tag. -->
 
 
-<uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
 
@@ -30,7 +31,7 @@ package="com.iyad.sultan.charger">
 
         <activity android:name="com.iyad.sultan.charger.start_4"  android:noHistory="true"></activity>
 
-        <activity android:name="com.iyad.sultan.charger.charger" android:noHistory="true">
+        <activity android:name="com.iyad.sultan.charger.charger">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -18,6 +18,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 
 /**
  * Created by salkhmis on 6/3/2016.
@@ -34,16 +38,23 @@ public class charger extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         boolean isRightToLeft = getResources().getBoolean(R.bool.is_right_to_left);
         //IF less then  API 16  chose charge_arabic
-        if(Build.VERSION.SDK_INT<=Build.VERSION_CODES.JELLY_BEAN && isRightToLeft)
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN && isRightToLeft)
             setContentView(R.layout.charger_arabic);
         else
             setContentView(R.layout.charge);
 
+        //adverting
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2100187188382709~6532666677");
 
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        //end
 
-        //get all information
+        //get all stored information
         myPrefs = getSharedPreferences("start_4", MODE_PRIVATE);
         nid = myPrefs.getString("NID", null);
         provider = myPrefs.getInt("PROVIDER", 0);
@@ -74,6 +85,10 @@ public class charger extends AppCompatActivity {
             textNid.setText("" + nid);
 
             //Toast.makeText(this, "new id is :" + nid, Toast.LENGTH_LONG).show();
+
+            //ask for permissions (call ,internet) on app Start if not granted
+          onAppStart("android.permission.CALL_PHONE");
+
         }
     }
 
@@ -163,7 +178,7 @@ public class charger extends AppCompatActivity {
         //No Permission given
         else {
             Toast.makeText(charger.this, getResources().getString(R.string.requestPhonePermission), Toast.LENGTH_LONG).show();
-            requestPermission("android.permission.CALL_PHONE",REQUEST_PHONE_CALL);
+            requestPermission("android.permission.CALL_PHONE", REQUEST_PHONE_CALL);
         }
 
     }
@@ -173,9 +188,22 @@ public class charger extends AppCompatActivity {
         int isGrandPermission = ContextCompat.checkSelfPermission(charger.this, permission);
         return (isGrandPermission == PackageManager.PERMISSION_GRANTED);
     }
+
     //ask for one Permission here Or can add Array of Permissions
-    public  void  requestPermission(String permission, int permissionCode){
-        ActivityCompat.requestPermissions(charger.this,new String[]{permission},permissionCode);
+    public void requestPermission(String permission, int permissionCode) {
+        ActivityCompat.requestPermissions(charger.this, new String[]{permission}, permissionCode);
+
     }
+
+    //check for call per on start
+    void onAppStart(String permession){
+       boolean isGrand= checkPermission(permession);
+        if(isGrand)
+            ;//do nothing
+        else
+        requestPermission(permession,REQUEST_PHONE_CALL);
+
+    }
+
 
 }

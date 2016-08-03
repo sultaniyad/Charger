@@ -56,7 +56,7 @@ public class start_4 extends AppCompatActivity {
                 ed.putString("NID",nid);
                 ed.commit();
                 startActivity(new Intent(start_4.this,charger.class));
-                Toast.makeText(start_4.this,"done here" ,Toast.LENGTH_SHORT).show();
+
 
 
             }

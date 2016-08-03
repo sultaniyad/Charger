@@ -37,4 +37,6 @@
     <string name="card_number_hint">رقم بطاقة الشحن</string>
 
     <bool name="is_right_to_left">true</bool>
+
+    <string name="banner_ad_unit_id">ca-app-pub-2100187188382709/8009399871</string>
 </resources>
