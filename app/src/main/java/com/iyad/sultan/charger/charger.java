@@ -68,15 +68,15 @@ public class charger extends AppCompatActivity {
 
             switch (provider) {
                 case 1:
-                    logo.setImageResource(R.drawable.rounded_corners_stc);
+                    logo.setImageResource(R.mipmap.rounded_corners_stc);
                     ;
                     break;
                 case 2:
-                    logo.setImageResource(R.drawable.rounded_corners_mobily);
+                    logo.setImageResource(R.mipmap.rounded_corners_mobily);
                     ;
                     break;
                 case 3:
-                    logo.setImageResource(R.drawable.rounded_corners_zain);
+                    logo.setImageResource(R.mipmap.rounded_corners_zain);
                     ;
                     break;
                 default:
