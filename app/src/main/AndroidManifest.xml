@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.iyad.sultan.charger">
+    package="com.iyad.sultan.charger">
 
     <!-- NOTE! Your uses-permission must be outside the "application" tag
            but within the "manifest" tag. -->
@@ -8,39 +8,52 @@ package="com.iyad.sultan.charger">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
-
+        android:hardwareAccelerated="false"
         android:allowBackup="true"
+        android:supportsRtl="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity android:name="com.iyad.sultan.charger.MainActivity">
 
         </activity>
 
-        <activity android:name="com.iyad.sultan.charger.start_1"  android:noHistory="true">
+        <activity
+            android:name="com.iyad.sultan.charger.start_1"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name="com.iyad.sultan.charger.start_2" android:noHistory="true"></activity>
+        <activity
+            android:name="com.iyad.sultan.charger.start_2"
+            android:noHistory="true"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name="com.iyad.sultan.charger.start_3"  android:noHistory="true"></activity>
+        <activity
+            android:name="com.iyad.sultan.charger.start_3"
+            android:noHistory="true"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name="com.iyad.sultan.charger.start_4"  android:noHistory="true"></activity>
+        <activity
+            android:name="com.iyad.sultan.charger.start_4"
+            android:noHistory="true"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name="com.iyad.sultan.charger.charger">
+        <activity
+            android:name="com.iyad.sultan.charger.charger"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
+
         </activity>
-
-
-
 
 
 

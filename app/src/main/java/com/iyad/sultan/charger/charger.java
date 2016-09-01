@@ -16,11 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+
+import com.facebook.ads.*;
 
 
 /**
@@ -29,6 +29,7 @@ import com.google.android.gms.ads.MobileAds;
 public class charger extends AppCompatActivity {
 
     final static int REQUEST_PHONE_CALL = 123;
+    private AdView adView;
 
     SharedPreferences myPrefs;
     private String nid;
@@ -46,13 +47,26 @@ public class charger extends AppCompatActivity {
         else
             setContentView(R.layout.charge);
 
-        //adverting
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2100187188382709~6532666677");
+        //Track App Installs and App Opens
+        // FacebookSdk.sdkInitialize(getApplicationContext());
+        // AppEventsLogger.activateApp(getApplication());
 
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        //end
+        //adverting
+
+       // AdSettings.addTestDevice("7fbbd4e6c9d5267212183e538564a679"); Test Device
+
+        // Instantiate an AdView view
+        adView = new AdView(getApplicationContext(), "1212280412127178_1212360448785841", AdSize.BANNER_HEIGHT_50);
+
+        // Find the main layout of your activity
+        LinearLayout layout = (LinearLayout) findViewById(R.id.adViewContainerAdd);
+
+        // Add the ad view to your activity layout
+        layout.addView(adView);
+
+        // Request to load an ad
+        adView.loadAd();
+
 
         //get all stored information
         myPrefs = getSharedPreferences("start_4", MODE_PRIVATE);
@@ -87,7 +101,7 @@ public class charger extends AppCompatActivity {
             //Toast.makeText(this, "new id is :" + nid, Toast.LENGTH_LONG).show();
 
             //ask for permissions (call ,internet) on app Start if not granted
-          onAppStart("android.permission.CALL_PHONE");
+            onAppStart("android.permission.CALL_PHONE");
 
         }
     }
@@ -196,14 +210,24 @@ public class charger extends AppCompatActivity {
     }
 
     //check for call per on start
-    void onAppStart(String permession){
-       boolean isGrand= checkPermission(permession);
-        if(isGrand)
+    void onAppStart(String permession) {
+        boolean isGrand = checkPermission(permession);
+        if (isGrand)
             ;//do nothing
         else
-        requestPermission(permession,REQUEST_PHONE_CALL);
+            requestPermission(permession, REQUEST_PHONE_CALL);
 
     }
 
 
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (adView != null) {
+            adView.removeAllViews();
+            adView.destroy();
+        }
+    }
 }

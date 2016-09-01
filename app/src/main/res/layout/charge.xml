@@ -55,7 +55,9 @@
                 android:background="@drawable/input"
                 android:layout_centerVertical="true"
                 android:layout_alignRight="@+id/imgLogo"
-                android:layout_alignEnd="@+id/imgLogo" />
+                android:layout_alignEnd="@+id/imgLogo"
+                android:imeOptions="actionDone"
+               />
 
             <Button
                 android:layout_width="wrap_content"
@@ -90,14 +92,14 @@
         android:gravity="center"
         android:layout_marginBottom="5dp">
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+       <!-- banner add here -->
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id">
-        </com.google.android.gms.ads.AdView>
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:id="@+id/adViewContainerAdd">
 
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -112,6 +114,7 @@
             android:text="@string/charge"
             android:id="@+id/button4"
             android:layout_weight="1"
+            android:onClick="reCharge"
             android:background="@drawable/button_mune"
             style="@style/button_style" />
 
